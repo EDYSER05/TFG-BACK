@@ -20,6 +20,7 @@ class IssueTypeSeeder extends Seeder
             'Salida anticipada no autorizada',
             'Horas extra no registradas',
             'Corrección administrativa',
+            'Otro',
         ];
 
         foreach ($types as $type) {
