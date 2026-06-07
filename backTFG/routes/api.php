@@ -138,11 +138,11 @@ Route::middleware('multiauth')->group(function () {
 
     // Festivos
     Route::get('holidays', [HolidayController::class, 'index'])->middleware('checkrole:admin,owner,manager,hr,employee');
-    Route::post('holidays', [HolidayController::class, 'store'])->middleware('checkrole:admin,owner');
+    Route::post('holidays', [HolidayController::class, 'store'])->middleware('checkrole:admin,owner,hr');
     Route::get('holidays/{holiday}', [HolidayController::class, 'show'])->middleware('checkrole:admin,owner,manager,hr,employee');
-    Route::put('holidays/{holiday}', [HolidayController::class, 'update'])->middleware('checkrole:admin,owner');
-    Route::patch('holidays/{holiday}', [HolidayController::class, 'update'])->middleware('checkrole:admin,owner');
-    Route::delete('holidays/{holiday}', [HolidayController::class, 'destroy'])->middleware('checkrole:admin,owner');
+    Route::put('holidays/{holiday}', [HolidayController::class, 'update'])->middleware('checkrole:admin,owner,hr');
+    Route::patch('holidays/{holiday}', [HolidayController::class, 'update'])->middleware('checkrole:admin,owner,hr');
+    Route::delete('holidays/{holiday}', [HolidayController::class, 'destroy'])->middleware('checkrole:admin,owner,hr');
 
     // Chat con RRHH
     Route::get('chat-messages', [ChatMessageController::class, 'index'])->middleware('checkrole:admin,owner,manager,hr,employee');
