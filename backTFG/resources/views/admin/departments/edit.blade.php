@@ -3,8 +3,6 @@
 
 @section('content')
 <div class="max-w-2xl">
-    <a href="{{ route('admin.departments') }}" class="text-sm text-indigo-600 hover:text-indigo-800 mb-4 inline-block">← Volver</a>
-
     <div class="bg-white rounded-xl border border-gray-200 p-6">
         <form action="{{ route('admin.departments.update', $department) }}" method="POST" class="space-y-4">
             @csrf
