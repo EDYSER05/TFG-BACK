@@ -10,9 +10,9 @@ return new class extends Migration
     {
         Schema::create('chat_messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
-            $table->foreignId('employee_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('sender_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('company_id')->constrained('companies')->restrictOnDelete();
+            $table->foreignId('employee_id')->constrained('users')->restrictOnDelete();
+            $table->foreignId('sender_id')->constrained('users')->restrictOnDelete();
             $table->text('message');
             $table->boolean('is_read')->default(false);
             $table->timestamps();
